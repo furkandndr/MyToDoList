@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(./pb.jpg) no-repeat;
+  background: url(./İmages/bb.jpeg) ;
   background-position: center;
   background-size: cover;
 }
@@ -25,13 +25,15 @@ body {
   background: transparent;
   border: 2px solid #e6b7eca1;
   border-radius: 10px;
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
 }
 
 h1 {
   color: #eee;
   text-align: center;
   margin-bottom: 36px;
+  background-color: black;
+  border-radius: 20px;
 }
 
 .input-container {
@@ -68,17 +70,14 @@ h1 {
   height: 40px;
 }
 
-.empty-image {
-  margin: 55px auto 0;
-  display: block;
-}
+
 
 .todo {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2805d5;
+  background-color: #18cf00;
   border-radius: 5px;
   margin: 10px 0;
   padding: 10px 12px;
@@ -95,7 +94,7 @@ h1 {
 }
 
 .todo:hover {
-  background-color:#5e1967a1;
+  background-color:#cf2d00a1;
 }
 
 .todo label {

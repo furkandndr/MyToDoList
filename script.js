@@ -1,14 +1,13 @@
+// const t_input = document.querySelector(".todo-input");
 const input = document.querySelector("input");
 const addButton = document.querySelector(".add-button");
 const todosHtml = document.querySelector(".todos");
-const emptyImage = document.querySelector(".empty-image");
 let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
 const deleteAllButton = document.querySelector(".delete-all");
 const filters = document.querySelectorAll(".filter");
 let filter = '';
 
 showTodos();
-
 function getTodoHtml(todo, index) {
   if (filter && filter != todo.status) {
     return '';
@@ -28,10 +27,10 @@ function getTodoHtml(todo, index) {
 function showTodos() {
   if (todosJson.length == 0) {
     todosHtml.innerHTML = '';
-    emptyImage.style.display = 'block';
+    
   } else {
     todosHtml.innerHTML = todosJson.map(getTodoHtml).join('');
-    emptyImage.style.display = 'none';
+    
   }
 }
 
@@ -96,3 +95,25 @@ deleteAllButton.addEventListener("click", () => {
   localStorage.setItem("todos", JSON.stringify(todosJson));
   showTodos();
 });
+
+const backgroundImages = [
+    'url(İmages/bb.jpeg)',
+    'url(İmages/bob.jpeg)',
+    'url(İmages/d.jpeg)',
+    'url(İmages/d2.jpeg)',
+    'url(İmages/dw.jpeg)',
+    'url(İmages/gtr.jpeg)',
+    'url(İmages/int.jpeg)',
+    'url(İmages/op.jpeg)',
+    'url(İmages/pb.jpg)',
+    'url(İmages/ts.jpeg)',
+    'url(İmages/ts1.jpeg)',
+
+  ];
+  let current_index = 0;
+  function changeBackground() {
+    document.body.style.transition = 'background-image 1s ease-in-out'; 
+    document.body.style.backgroundImage = backgroundImages[current_index];
+    current_index = (current_index + 1 ) % backgroundImages.length;
+  }
+  setInterval(changeBackground, 5000);
